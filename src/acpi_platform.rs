@@ -17,8 +17,8 @@ const SYSFS_PATH: &str = "/sys/firmware/acpi/platform_profile";
 pub fn supported() -> bool { Path::new(SYSFS_PATH).exists() }
 
 pub fn battery() {
-    if let Err(why) = fs::write(SYSFS_PATH, "low-power") {
-        eprintln!("ACPI Platform Profile: could not set to low-power: {}", why);
+    if let Err(why) = fs::write(SYSFS_PATH, "quiet") {
+        eprintln!("ACPI Platform Profile: could not set to quiet: {}", why);
     }
 }
 
